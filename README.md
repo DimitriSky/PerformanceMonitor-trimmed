@@ -60,7 +60,7 @@ platform :ios, '13.0'
 target 'ProjectName' do
   use_frameworks!
 
-  pod 'PerformanceMonitor', :git => 'https://github.com/DimitriSky/PerformanceMonitor-trimmed.git', :commit => '4059c92d82c8566f7ed7fc487d05fef2097fd506'
+  pod 'PerformanceMonitor', :git => 'https://github.com/DimitriSky/PerformanceMonitor-trimmed.git', :commit => 'f0a63b622cbf0b6acf2d5a350725b8f1d819a1f6'
 
 end
 ```
