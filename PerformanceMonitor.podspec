@@ -15,6 +15,4 @@ Pod::Spec.new do |spec|
   spec.swift_version = ['4.2', '5.0']
 
   spec.source_files = 'PerformanceMonitor/**/*.{h,mm,swift,s}'
-
-  spec.dependency 'RCBacktrace', '~> 0.1.7'
 end
