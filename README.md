@@ -7,7 +7,7 @@
 
 Monitoring CPU, Memory, FPS.
 
-The repository was forked and the following changes were made: emoved a couple of modules that were causing app crashes, updated for iOS 13, fixed warnings for iOS 16.
+The repository was forked and the following changes were made: removed a couple of modules that were causing app crashes, updated for iOS 13, fixed warnings for iOS 16.
 
 ## Plugin
 * CPUMonitor
