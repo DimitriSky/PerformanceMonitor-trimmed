@@ -65,7 +65,7 @@ target 'ProjectName' do
 end
 ```
 
-##Thanks
+## Thanks
 
 [SwiftTrace](https://github.com/johnno1962/SwiftTrace)  
 [GDPerformanceView-Swift](https://github.com/dani-gavrilov/GDPerformanceView-Swift)  
