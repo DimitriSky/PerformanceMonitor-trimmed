@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.source    = { :git => "https://github.com/woshiccm/PerformanceMonitor.git", :tag => spec.version }
   spec.license = 'Code is private.'
 
-  spec.platforms = { :ios => '9.0' }
+  spec.platforms = { :ios => '13.0' }
   spec.requires_arc = true
 
   spec.cocoapods_version = '>= 1.4'

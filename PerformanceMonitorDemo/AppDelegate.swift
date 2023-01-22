@@ -8,14 +8,6 @@
 
 import UIKit
 import PerformanceMonitor
-//import RCBacktrace
-
-extension AppDelegate: MethodTimeMonitorDelegate {
-
-    func methodTimeMonitor(_ record: MethodTimeMonitorRecord) {
-        print(record.description)
-    }
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        performanceMonitor = PerformanceMonitor(displayOptions: [.cpu, .memory, .fps, .fluecy])
+        performanceMonitor = PerformanceMonitor(displayOptions: [.cpu, .memory, .fps])
         performanceMonitor?.start()
         
         return true

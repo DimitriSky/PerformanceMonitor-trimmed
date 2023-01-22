@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PerformanceMonitor
 
 class ViewController: UIViewController {
 

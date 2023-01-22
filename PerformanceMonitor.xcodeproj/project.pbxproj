@@ -16,7 +16,6 @@
 		3A4D8C4A231162A400C22EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D8C48231162A400C22EFD /* LaunchScreen.storyboard */; };
 		45039AE57284072FADDFFD41 /* Pods_PerformanceMonitorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CDBE8B399B0FD29828E8BB /* Pods_PerformanceMonitorDemo.framework */; };
 		9C1017AB23140D7B00158CA4 /* FPSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1017AA23140D7B00158CA4 /* FPSTestViewController.swift */; };
-		9C4A2B53231BCF160066342F /* RCBacktrace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4A2B52231BCF160066342F /* RCBacktrace.framework */; };
 		9C4A2B55231BCF320066342F /* PerformanceMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4D8BD623111FC300C22EFD /* PerformanceMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C8E47BF297DCF62006337C0 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E47B3297DCF61006337C0 /* PerformanceViewController.swift */; };
 		9C8E47C0297DCF62006337C0 /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E47B4297DCF61006337C0 /* PerformanceView.swift */; };
@@ -25,7 +24,6 @@
 		9C8E47C3297DCF62006337C0 /* CPUMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E47B9297DCF61006337C0 /* CPUMonitor.swift */; };
 		9C8E47C5297DCF62006337C0 /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E47BB297DCF61006337C0 /* PerformanceMonitor.swift */; };
 		9C8E47C7297DCF62006337C0 /* FPSMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E47BE297DCF61006337C0 /* FPSMonitor.swift */; };
-		9C8E47C9297DCFB6006337C0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E47C8297DCFB6006337C0 /* Info.plist */; };
 		A0967CD0CF6A38CA8B0B8D33 /* Pods_PerformanceMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD76E55677865B920D13A14 /* Pods_PerformanceMonitor.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4A2B53231BCF160066342F /* RCBacktrace.framework in Frameworks */,
 				A0967CD0CF6A38CA8B0B8D33 /* Pods_PerformanceMonitor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8E47C9297DCFB6006337C0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +624,7 @@
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = PerformanceMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,7 +654,7 @@
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = PerformanceMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -679,6 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = PerformanceMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,6 +695,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = PerformanceMonitorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -719,7 +717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7BCF82NHQ;
 				INFOPLIST_FILE = PerformanceMonitorDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -740,7 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7BCF82NHQ;
 				INFOPLIST_FILE = PerformanceMonitorDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
