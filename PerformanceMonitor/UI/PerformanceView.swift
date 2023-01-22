@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
-class PerformanceView: UIWindow {
+public class PerformanceView: UIWindow {
 
     init() {
         super.init(frame: UIScreen.main.bounds)
 
         windowLevel = .normal + 1
+        if let scene = UIApplication.shared.connectedScenes.first,
+           let windowScene_ = scene as? UIWindowScene {
+            windowScene = windowScene_
+        }
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
         rootViewController = PerformanceViewController()
     }
@@ -30,7 +35,7 @@ class PerformanceView: UIWindow {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if rootViewController?.presentedViewController != nil {
             return super.point(inside: point, with: event)
         }

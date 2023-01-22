@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RCBacktrace
 
 public class PerformanceMonitor {
 
@@ -22,6 +21,8 @@ public class PerformanceMonitor {
 
     private let performanceView = PerformanceView()
     
+    public func performanceViewGet() -> PerformanceView { return performanceView }
+    
     public struct DisplayOptions: OptionSet {
         public let rawValue: Int
 
@@ -30,10 +31,8 @@ public class PerformanceMonitor {
         public static let memory = DisplayOptions(rawValue: 1 << 1)
 
         public static let fps = DisplayOptions(rawValue: 1 << 2)
-
-        public static let fluecy = DisplayOptions(rawValue: 1 << 3)
         
-        public static let all: DisplayOptions = [.cpu, .memory, .fps, .fluecy]
+        public static let all: DisplayOptions = [.cpu, .memory, .fps]
         
         public init(rawValue: Int) {
             self.rawValue = rawValue
@@ -43,7 +42,6 @@ public class PerformanceMonitor {
     private var monitoringTimer: DispatchSourceTimer?
     private var displayOptions: DisplayOptions = .all
     private var fpsMonitor: FPSMonitor?
-    private var fluecyMonitor: FluecyMonitor?
 
     public init(displayOptions: DisplayOptions = .all) {
         self.displayOptions = displayOptions
@@ -51,16 +49,11 @@ public class PerformanceMonitor {
             fpsMonitor = FPSMonitor()
             fpsMonitor?.delegate = self
         }
-
-        if displayOptions.contains(.fluecy) {
-            fluecyMonitor = FluecyMonitor()
-            fluecyMonitor?.start()
-        }
     }
 
     public func start() {
         performanceView.isHidden = false
-
+        
         monitoringTimer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.global())
         monitoringTimer?.schedule(deadline: .now(), repeating: 1)
         monitoringTimer?.setEventHandler(handler: { [weak self] in
@@ -75,10 +68,10 @@ public class PerformanceMonitor {
                     if strongSelf.cpuTime > Constants.cpuTimeInterval {
                         if CPUMonitor.usage() > Constants.maxCUPUsage {
                             print("CPU usage is too high -------------------------------------------")
-                            let symbols = RCBacktrace.callstack(.current)
-                            for symbol in symbols {
-                                print(symbol.description)
-                            }
+//                            let symbols = RCBacktrace.callstack(.current)
+//                            for symbol in symbols {
+//                                print(symbol.description)
+//                            }
                             print("CPU usage is too high -------------------------------------------")
                             strongSelf.cpuTime = 1
                         }

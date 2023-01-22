@@ -8,7 +8,7 @@
 
 import UIKit
 import PerformanceMonitor
-import RCBacktrace
+//import RCBacktrace
 
 extension AppDelegate: MethodTimeMonitorDelegate {
 
@@ -26,12 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        RCBacktrace.setup()
         performanceMonitor = PerformanceMonitor(displayOptions: [.cpu, .memory, .fps, .fluecy])
         performanceMonitor?.start()
-
-        MethodTimeMonitor.traceBundle(containing: type(of: self))
-        MethodTimeMonitor.delegate = self
         
         return true
     }
