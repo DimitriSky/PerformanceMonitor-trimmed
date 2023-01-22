@@ -2,80 +2,67 @@
 
 ![badge-pms](https://img.shields.io/badge/languages-Swift|ObjC-orange.svg)
 ![badge-platforms](https://img.shields.io/cocoapods/p/RCBacktrace.svg?style=flat)
-![badge-languages](https://img.shields.io/badge/supports-Carthage|CocoaPods|SwiftPM-green.svg)
-[![Swift Version](https://img.shields.io/badge/Swift-4.0--5.0.x-F16D39.svg?style=flat)](https://developer.apple.com/swift)
+![badge-languages](https://img.shields.io/badge/supports-Carthage|CocoaPods-green.svg)
+[![Swift Version](https://img.shields.io/badge/Swift-5.0.x-F16D39.svg?style=flat)](https://developer.apple.com/swift)
 
-PerformanceMonitor is a non-invasive APM system, Including monitoring CPU,Memory,FPS,Recording all OC and Swift methods time consuming,etc.
+Monitoring CPU, Memory, FPS.
 
 ## Plugin
 * CPUMonitor
 * MemoryMonitor
 * FPSMonitor
-* FluecyMonitor
-* SwiftTrace
 
 ## Features
 
-- [x] Monitor cup usage, record current thread call stack if the usage rate exceeds 80%
+- [x] Monitor cup usage
 - [x] Monitor memory usage
 - [x] Monitor fps
-- [x] Record main thread call stack if app is not fluecy
-- [x] Record all OC and Swift methods time consuming  
-
->Note: none of these features will work on a class or method that is final or internal in a module compiled with whole module optimisation as the dispatch of the method will be "direct" i.e. linked to a symbol at the call site rather than going through the class' vtable.
 
 ![Screen Shot 2019-09-08 at 4.09.41 PM.png](https://upload-images.jianshu.io/upload_images/2086987-4fec99a35eac32c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![Screen Shot 2019-09-10 at 6.10.47 PM.png](https://upload-images.jianshu.io/upload_images/2086987-a22d493c640dfc82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![Screen Shot 2019-09-10 at 6.11.04 PM.png](https://upload-images.jianshu.io/upload_images/2086987-c4db6903675d43b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Usage
 
 ### setup
 
 ```
-RCBacktrace.setup()
-performanceMonitor = PerformanceMonitor(displayOptions: [.cpu, .memory, .fps, .fluecy])
-performanceMonitor?.start()
-SwiftTrace.traceBundle(containing: type(of: self))
+import UIKit
+import PerformanceMonitor
 
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
+    var performanceMonitor: PerformanceMonitor?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        performanceMonitor = PerformanceMonitor(displayOptions: [.cpu, .memory, .fps])
+        performanceMonitor?.start()
+    }
 ```
 
 
 
 ≈ Requirements
 
-- iOS 8.0+
-- Swift 4.0-5.x
-
-## Next Steps
-
-* Use TableView to show records
-* Improve SwiftTrace, support more Swift methods
+- iOS 13.0+
+- Swift 5.x
 
 ## Installation
-
-#### Carthage
-Add the following line to your [Cartfile](https://github.com/carthage/carthage)
-
-```
-git "https://github.com/woshiccm/PerformanceMonitor.git" "0.0.1"
-```
 
 ### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate Aspect into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
+platform :ios, '13.0'
 
-target 'xxxx' do
-    pod 'PerformanceMonitor', '~> 0.0.5'
+target 'ProjectName' do
+  use_frameworks!
+
+  pod 'PerformanceMonitor', :git => 'https://github.com/DimitriSky/PerformanceMonitor-trimmed.git', :commit => '4059c92d82c8566f7ed7fc487d05fef2097fd506'
+
 end
-
 ```
 
 ##Thanks
