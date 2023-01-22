@@ -2,10 +2,12 @@
 
 ![badge-pms](https://img.shields.io/badge/languages-Swift|ObjC-orange.svg)
 ![badge-platforms](https://img.shields.io/cocoapods/p/RCBacktrace.svg?style=flat)
-![badge-languages](https://img.shields.io/badge/supports-Carthage|CocoaPods-green.svg)
+![badge-languages](https://img.shields.io/badge/supports-CocoaPods-green.svg)
 [![Swift Version](https://img.shields.io/badge/Swift-5.0.x-F16D39.svg?style=flat)](https://developer.apple.com/swift)
 
 Monitoring CPU, Memory, FPS.
+
+The repository was forked and the following changes were made: emoved a couple of modules that were causing app crashes, updated for iOS 13, fixed warnings for iOS 16.
 
 ## Plugin
 * CPUMonitor
