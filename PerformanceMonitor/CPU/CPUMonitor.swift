@@ -33,7 +33,11 @@ public class CPUMonitor {
     // Current CPU usage for your Applicaiton
     public static func usage() -> Double {
         var usageOfCPU: Double = 0.0
-        var threads = UnsafeMutablePointer(mutating: [thread_act_t]())
+
+        var bytes = [thread_act_t]()
+        var threads = UnsafeMutablePointer<thread_act_t>.allocate(capacity: bytes.count)
+        threads.initialize(from: &bytes, count: bytes.count)
+        
         var count = mach_msg_type_number_t(0)
         
         defer {

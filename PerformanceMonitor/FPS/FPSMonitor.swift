@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc public protocol FPSMonitorDelegate: class {
+@objc public protocol FPSMonitorDelegate: AnyObject {
     
     func fpsMonitor(with monitor: FPSMonitor, fps: Double)
 }
